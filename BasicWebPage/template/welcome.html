@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1></h1>
+      <br>
+      <ul>
+          {% for item in data %}
+          <li>{{item.urnm}}</li>
+          {% endfor %}
+      </ul>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+    <form action="" method="post">
+        <button name="" type="submit" value="delete">Delete</button>
+    </form>
+  </body>
+</html>
