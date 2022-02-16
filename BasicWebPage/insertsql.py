@@ -54,7 +54,7 @@ def find_info(urnm):
 	if row is not None:
 		return True
 	return False
-	
+	 
 
 def verification(urnm,pwd):
 	find_user=("SELECT `user_id` FROM `login_info` WHERE username = '{}';".format(urnm))
@@ -64,9 +64,10 @@ def verification(urnm,pwd):
 	if row is not None:
 		cursor.execute(find_pwd)
 		row2=cursor.fetchone()
+		print("Row2 is : ", row2)
 		if row2 is not None:
-			return False
-	return True
+			return True
+	return False
 
 def edit_login(urnm,newpswd):
 	data = (newpswd,urnm)

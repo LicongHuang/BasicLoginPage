@@ -45,6 +45,7 @@ def login():
     error = None
     if request.method == 'POST':
         print(insertsql.find_info(request.form['username']))
+        print("Verification: ",insertsql.verification(request.form['username'],request.form['password']))
         if insertsql.verification(request.form['username'],request.form['password']): #add a check with the password
             return redirect(url_for('welcome',urnm=request.form['username']))
         else:
